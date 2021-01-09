@@ -1,0 +1,9 @@
+{
+  "name": "json-server",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "scripts": {
+    "start": "json-server --watch db.json --port 3001"
+  }
+}

@@ -2,27 +2,39 @@
   "pokemons": [
     {
       "name": "bulbasaur",
-      "id": 1
+      "id": 1,
+      "isCatch": true,
+      "dateCatch": "08.01.2021"
     },
     {
       "name": "ivysaur",
-      "id": 2
+      "id": 2,
+      "isCatch": true,
+      "dateCatch": "08.01.2021"
     },
     {
       "name": "venusaur",
-      "id": 3
+      "id": 3,
+      "isCatch": true,
+      "dateCatch": "08.01.2021"
     },
     {
       "name": "charmander",
-      "id": 4
+      "id": 4,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "charmeleon",
-      "id": 5
+      "id": 5,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "charizard",
-      "id": 6
+      "id": 6,
+      "isCatch": true,
+      "dateCatch": "08.01.2021"
     },
     {
       "name": "squirtle",
@@ -30,7 +42,9 @@
     },
     {
       "name": "wartortle",
-      "id": 8
+      "id": 8,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "blastoise",
@@ -38,7 +52,9 @@
     },
     {
       "name": "caterpie",
-      "id": 10
+      "id": 10,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "metapod",
@@ -62,7 +78,9 @@
     },
     {
       "name": "pidgey",
-      "id": 16
+      "id": 16,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "pidgeotto",
@@ -90,11 +108,15 @@
     },
     {
       "name": "ekans",
-      "id": 23
+      "id": 23,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "arbok",
-      "id": 24
+      "id": 24,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "pikachu",
@@ -102,7 +124,9 @@
     },
     {
       "name": "raichu",
-      "id": 26
+      "id": 26,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "sandshrew",
@@ -162,7 +186,9 @@
     },
     {
       "name": "zubat",
-      "id": 41
+      "id": 41,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "golbat",
@@ -170,11 +196,15 @@
     },
     {
       "name": "oddish",
-      "id": 43
+      "id": 43,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "gloom",
-      "id": 44
+      "id": 44,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "vileplume",
@@ -210,7 +240,9 @@
     },
     {
       "name": "persian",
-      "id": 53
+      "id": 53,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "psyduck",
@@ -246,7 +278,9 @@
     },
     {
       "name": "poliwrath",
-      "id": 62
+      "id": 62,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "abra",
