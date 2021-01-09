@@ -58,7 +58,9 @@
     },
     {
       "name": "metapod",
-      "id": 11
+      "id": 11,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "butterfree",
@@ -74,7 +76,9 @@
     },
     {
       "name": "beedrill",
-      "id": 15
+      "id": 15,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "pidgey",
@@ -96,7 +100,9 @@
     },
     {
       "name": "raticate",
-      "id": 20
+      "id": 20,
+      "isCatch": true,
+      "dateCatch": "09.01.2021"
     },
     {
       "name": "spearow",

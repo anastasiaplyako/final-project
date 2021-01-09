@@ -23,10 +23,9 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         backgroundColor: "#b97fc9",
     },
-
 }));
 
-export default function NavbarUI(props) {
+export default function NavbarUI() {
     const classes = useStyles();
     let urlMain = classes.menu__item;
     let urlCaught = classes.menu__item;

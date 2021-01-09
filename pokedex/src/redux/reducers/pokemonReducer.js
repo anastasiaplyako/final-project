@@ -1,10 +1,9 @@
 import {
     CAUGHT_POKEMON,
-    CHANGE_STATUS,
     FETCH_PAGE,
     FETCH_POKEMON,
     FETCH_POKEMONS,
-    PUT_POKEMON, RESET_CAUGHT_POKEMONS, RESET_PAGE,
+    PUT_POKEMON, RESET_CAUGHT_POKEMONS,
     RESET_POKEMONS
 } from "../actions/actionTypes";
 
@@ -12,14 +11,12 @@ const initialState = {
     pokemons: [],
     pokemon: {},
     caughtPokemons: [],
-    isFetchCaughtPokemons: false, // false - show all pokemon, true - download caught pokemon
     page: 1,
 }
 
 export const pokemonReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_POKEMONS: {
-            console.log("state.pokemons = ", state)
             return {
                 ...state,
                 pokemons: state.pokemons.concat(action.payload)
@@ -29,12 +26,6 @@ export const pokemonReducer = (state = initialState, action) => {
             return {
                 ...state,
                 pokemon: action.payload
-            }
-        }
-        case RESET_PAGE: {
-            return {
-                ...state,
-                page: 1
             }
         }
         case PUT_POKEMON: {
@@ -48,18 +39,16 @@ export const pokemonReducer = (state = initialState, action) => {
                 }),
             };
         }
-        case RESET_CAUGHT_POKEMONS: {
+        case CAUGHT_POKEMON: {
             return {
                 ...state,
-                caughtPokemons: []
+                caughtPokemons: [...state.caughtPokemons, ...action.payload]
             }
         }
-
-        case CAUGHT_POKEMON: {
-            console.log("CAUGHT_POKEMON")
+        case FETCH_PAGE: {
             return {
                 ...state,
-                caughtPokemons: [...state.caughtPokemons,...action.payload ]
+                page: state.page + 1
             }
         }
         case RESET_POKEMONS: {
@@ -69,14 +58,13 @@ export const pokemonReducer = (state = initialState, action) => {
                 pokemons: []
             }
         }
-        case FETCH_PAGE: {
-            console.log("Fetch_page")
-            console.log("start = ", state.page);
+        case RESET_CAUGHT_POKEMONS: {
             return {
                 ...state,
-                page: state.page + 1
+                caughtPokemons: []
             }
         }
+
 
         default: {
             return state;

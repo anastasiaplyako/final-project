@@ -1,24 +1,15 @@
-import React, {useCallback, useEffect} from 'react'
-import {connect, useDispatch, useSelector} from 'react-redux'
+import React, {useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import {
-    catchPokemon,
-    fetchAllPokemon,
-    fetchCaughtPokemon, fetchCaughtPokemons,
-    loadMore, resetCaughtPokemon,
-    resetPage,
+    fetchCaughtPokemons,
+    resetCaughtPokemon,
     resetPokemons
 } from "../redux/actions/actions";
 import PokemonCard from './PokemonCard'
-import Loading from "../view/Loading";
 import ListUI from "../view/ListUI";
-import LoadMore from "./LoadMore";
-import LoadMoreUI from "../view/LoadMoreUI";
-import {VISIBLE} from "../const";
-import {Link} from "react-router-dom";
-import Navbar from "./Navbar";
+import NavbarUI from "../view/NavbarUI";
 
-export default (props) => {
-    console.log("page new!!!!")
+export default () => {
     const dispatch = useDispatch(); //позволяет диспатчить акшэны в стор
 
     useEffect(() => {
@@ -28,11 +19,10 @@ export default (props) => {
     }, [dispatch]);
 
     const pokemons = useSelector(state => state.pokemons.caughtPokemons);
-    console.log("pokemons", pokemons)
 
     return (
         <React.Fragment>
-            <Navbar/>
+            <NavbarUI/>
             <ListUI> {
                 pokemons.map(pokemon => (
                     <PokemonCard

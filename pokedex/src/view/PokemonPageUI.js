@@ -1,12 +1,9 @@
 import React from 'react'
 import {makeStyles} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import {Link} from "react-router-dom";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import CardActions from "@material-ui/core/CardActions";
 import {TYPE_IMAGE} from "../const";
 
 const useStyles = makeStyles({
@@ -59,7 +56,6 @@ export default function CardUI(props) {
                     Дата: {pokemon.dateCatch}
                 </Typography>
                 }
-
             </div>
         </div>
     );

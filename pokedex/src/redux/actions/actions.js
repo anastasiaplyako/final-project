@@ -4,40 +4,35 @@ import {
     SHOW_LOADER,
     HIDE_LOADER,
     PUT_POKEMON,
-    CAUGHT_POKEMON, CHANGE_STATUS, RESET_POKEMONS, FETCH_PAGE, RESET_PAGE, RESET_CAUGHT_POKEMONS
+    CAUGHT_POKEMON, RESET_POKEMONS, FETCH_PAGE, RESET_CAUGHT_POKEMONS
 } from './actionTypes'
 import {VISIBLE} from "../../const";
 
 export function fetchAllPokemon(page) {
-    const visible = VISIBLE;
     return async dispatch => {
-        /*dispatch(showLoader());*/
-        /*let url = (!statusPokemons)
-            ? `http://localhost:3001/pokemons?_page=${page}&_limit=${VISIBLE}`
-            : `http://localhost:3001/pokemons/?isCatch=true&_page=${page}&_limit=${VISIBLE}`;*/
+        dispatch(showLoader());
         let url = `http://localhost:3001/pokemons?_page=${page}&_limit=${VISIBLE}`
         const response = await fetch(url);
         const json = await response.json();
-        console.log('json = ', json);
         dispatch({
             type: FETCH_POKEMONS,
             payload: json,
         })
-        /*dispatch(hideLoader());*/
+        dispatch(hideLoader());
     }
 }
 
 export function fetchCaughtPokemons() {
     return async dispatch => {
+        dispatch(showLoader());
         let url = `http://localhost:3001/pokemons/?isCatch=true`
         const response = await fetch(url);
         const json = await response.json();
-        console.log('json = ', json);
         dispatch({
             type: CAUGHT_POKEMON,
             payload: json,
         })
-        /*dispatch(hideLoader());*/
+        dispatch(hideLoader());
     }
 }
 
@@ -57,7 +52,6 @@ export function fetchPokemon(id) {
 export function catchPokemon(pokemon) {
     pokemon.isCatch = true;
     pokemon.dateCatch = new Date().toLocaleDateString();
-    console.log("Gotcha!");
     return async (dispatch) => {
         const response = await fetch(
             `http://localhost:3001/pokemons/${pokemon.id}`,
@@ -72,25 +66,9 @@ export function catchPokemon(pokemon) {
     };
 }
 
-export function fetchCaughtPokemon() {
-    console.log("fetchCaughtPokemon");
-    return async (dispatch) => {
-        const response = await fetch(`http://localhost:3001/pokemons/?isCatch=true`);
-        const json = await response.json();
-        dispatch({type: CAUGHT_POKEMON, payload: json});
-    };
-}
-
-
 export function loadMore() {
     return {
         type: FETCH_PAGE
-    }
-}
-
-export function resetPage() {
-    return {
-        type: RESET_PAGE
     }
 }
 
@@ -104,13 +82,6 @@ export function resetPokemons() {
 export function resetCaughtPokemon() {
     return {
         type: RESET_CAUGHT_POKEMONS
-    }
-}
-
-
-export function changeStatus() {
-    return {
-        type: CHANGE_STATUS
     }
 }
 
